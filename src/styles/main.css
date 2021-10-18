@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "Gilroy-medium";
+    src: url("/src/styles/fonts/Gilroy-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Gilroy-regular";
+    src: url("/src/styles/fonts/Gilroy-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Gilroy-semibold";
+    src: url("/src/styles/fonts/Gilroy-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "Gilroy-bold";
+    src: url("/src/styles/fonts/Gilroy-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Gilroy-extrabold";
+    src: url("/src/styles/fonts/Gilroy-ExtraBold.ttf");
+}
+
+.fontfam-medium {
+    font-family: Gilroy-medium;
+}
+
+.container, .fontfam-regular {
+    font-family: Gilroy-regular;
+}
+
+.fontfam-semibolder {
+    font-family: Gilroy-semibold;
+}
+
+.fontfam-bolder {
+    font-family: Gilroy-bold;
+}
+
+.fontfam-extrabold {
+    font-family: Gilroy-extrabold;
+}
+
+
+.click-btn {  
+    animation: spin 700ms forwards cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+textarea:focus {
+    outline: none;
+}
