@@ -6,12 +6,15 @@ const handleNewNoteCreate = function () {
     let saveCreatebtn;
 
 
+
     let localData = localStorage.getItem("Notes")
-    console.log("First Render", localData);
+    // console.log("First Render", localData);
+
     let allNotesObject = localData ? JSON.parse(localData) : [
+        // TODO Implement random ccolors on load
         // {
-        //     color: "bg-colorTwo",
-        //     content: "lorem ipsun dolor dolor lorem ipsun dolor dolor ",
+        //     color: "bg-colorFour",
+        //     content: "Create new notes...",
         // },
         // {
         //     color: "bg-colorOne",
@@ -32,14 +35,13 @@ const handleNewNoteCreate = function () {
     ]
 
 
-    let allNotesObjectFull;
 
     window.addEventListener("load", () => {
 
 
         localStorage.setItem("Notes", JSON.stringify(allNotesObject));
         let myNotesUnparsed = localStorage.getItem("Notes")
-        allNotesObjectFull = JSON.parse(myNotesUnparsed)
+        allNotesObject = JSON.parse(myNotesUnparsed)
         // console.log(JSON.stringify(allNotesObject));
 
         const colorsBar = document.querySelector(".colors");
@@ -110,7 +112,7 @@ const handleNewNoteCreate = function () {
                 })
 
                 localStorage.setItem("Notes", JSON.stringify(allNotesObject))
-                console.log(allNotesObject)
+                // console.log(allNotesObject)
 
                 myNotesUnparsed = localStorage.getItem("Notes")
 
@@ -147,6 +149,7 @@ const handleNewNoteCreate = function () {
         });
 
     })
+
 
     return allNotesObject;
 }
