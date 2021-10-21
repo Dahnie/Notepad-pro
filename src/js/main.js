@@ -11,7 +11,6 @@ const handleNewNoteCreate = function () {
     // console.log("First Render", localData);
 
     let allNotesObject = localData ? JSON.parse(localData) : [
-        // TODO Implement random ccolors on load
         // {
         //     color: "bg-colorFour",
         //     content: "Create new notes...",
@@ -67,9 +66,6 @@ const handleNewNoteCreate = function () {
             newElemDiv.insertAdjacentElement("afterbegin", newElem)
             newElemDiv.insertAdjacentElement("beforeend", saveContentDiv)
             allNotesSection.insertAdjacentElement("afterbegin", newElemDiv)
-            // console.log("Save Cont---", saveContentDiv);
-            // console.log("Elem---", newElem);
-            // console.log("FullNotes---", allNotesSection);
 
             // Handle Cancel
             let cancelCreatebtn = document.querySelector(".cancel-btn");
@@ -85,12 +81,8 @@ const handleNewNoteCreate = function () {
             })
 
 
-
-
             // Handle Save
             saveCreatebtn = document.querySelector(".save-btn");
-
-
             function saveNote(e) {
                 e.stopPropagation();
                 newContent = saveCreatebtn.parentElement.previousSibling.value;

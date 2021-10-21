@@ -32,17 +32,14 @@ const Mainpage = () => {
                     confirmDelete.classList.add("hidden")
                     let meNotes = localStorage.getItem("Notes");
                     meNotes = JSON.parse(meNotes);
-                    // console.log("meNotes-----", meNotes);
                     let filteredNotes = meNotes.filter(elem =>
                         (elem.content !== noteContent)
                     )
-                    // console.log("meNotes-----FILTERED", filter);
+
                     localStorage.clear();
                     localStorage.setItem("Notes", JSON.stringify(filteredNotes))
                     window.location.reload()
 
-
-                    // TODO Track deletion with keys to prevent propagation
                 })
                 e.target.parentElement.parentElement.nextSibling.lastChild.lastChild && e.target.parentElement.parentElement.nextSibling.lastChild.lastChild.addEventListener("click", (e) => {
                     //    No
@@ -97,17 +94,18 @@ const Mainpage = () => {
         // When the content is edited
         if (content !== undefined) {
             edittedContent = { color: myColor, content, date: updatedDate };
-        } else {
+        }
+        else {
             // When the content is not changed 
             edittedContent = { color, currentContent, date }
         }
-        console.log("CurrentCont----", edittedContent);
+        // console.log("CurrentCont----", edittedContent);
         index = e.target.parentElement.parentElement.parentElement.getAttribute("data-title");
 
-        console.log("EDITTED-BEFORE-------", allNotesObjectEdit);
+        // console.log("EDITTED-BEFORE-------", allNotesObjectEdit);
         let edittedAllNotesObjectEdit = allNotesObjectEdit.slice();
         let deleted = edittedAllNotesObjectEdit.splice(index, 1, edittedContent)
-        console.log("EDITTED-AFTER-------", edittedAllNotesObjectEdit);
+        // console.log("EDITTED-AFTER-------", edittedAllNotesObjectEdit);
         localStorage.clear();
         localStorage.setItem("Notes", JSON.stringify(edittedAllNotesObjectEdit));
         window.location.reload();
