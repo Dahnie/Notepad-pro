@@ -94,18 +94,18 @@ const Mainpage = () => {
         // When the content is edited
         if (content !== undefined) {
             edittedContent = { color: myColor, content, date: updatedDate };
+            // console.log("EDITTED-CHANGED-------", editContent);
         }
         else {
             // When the content is not changed 
-            edittedContent = { color, currentContent, date }
+            edittedContent = { color, content: currentContent, date }
+            // console.log("EDITTED-UNCHANGED-------", editContent);
         }
         // console.log("CurrentCont----", edittedContent);
         index = e.target.parentElement.parentElement.parentElement.getAttribute("data-title");
 
-        // console.log("EDITTED-BEFORE-------", allNotesObjectEdit);
         let edittedAllNotesObjectEdit = allNotesObjectEdit.slice();
         let deleted = edittedAllNotesObjectEdit.splice(index, 1, edittedContent)
-        // console.log("EDITTED-AFTER-------", edittedAllNotesObjectEdit);
         localStorage.clear();
         localStorage.setItem("Notes", JSON.stringify(edittedAllNotesObjectEdit));
         window.location.reload();
@@ -123,11 +123,6 @@ const Mainpage = () => {
             e.target.parentElement.parentElement.parentElement.classList.add("hidden");
         }, 400)
     }
-
-
-    // TODO
-    // 1. Delete only exact index
-    // 2. Don't create an empty note
 
 
     return (
