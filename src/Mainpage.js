@@ -161,7 +161,7 @@ const Mainpage = () => {
                             </>
                         </div>
                         <div className={`${elem.color} new-note px-6 pt-3 text-sm h-48 w-52 rounded-3xl col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 overflow-hidden border-gray-300 hidden`}>
-                            <textarea className={`${elem.color} new-note-textarea text-sm h-36 w-40 overflow-x-hidden overflow-y-auto border-gray-400 border p-3 pb-0 rounded-md`} defaultValue={content} onChange={(e) => setContent(e.target.value)} >
+                            <textarea className={`${elem.color} new-note-textarea text-sm h-36 w-40 overflow-x-hidden overflow-y-auto border-gray-400 border p-3 pb-0 rounded-md`} value={content} onChange={(e) => setContent(e.target.value)} >
                                 {elem.content}
                             </textarea>
                             <div className="h-10 flex justify-center items-center">
