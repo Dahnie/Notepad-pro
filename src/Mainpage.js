@@ -126,7 +126,7 @@ const Mainpage = () => {
 
 
     return (
-        <div className="content mainpage-content col-span-9 md:col-span-10 w-full fontfam-regular pt-16 pl-16 md:pl-7 px-7">
+        <div className="content mainpage-content col-span-9 md:col-span-10 w-full fontfam-regular pt-16 pl-auto md:pl-7 px-7">
             <div className="header font-semibold text-3xl pl-4 md:pl-0">
                 Notes
             </div>
@@ -139,7 +139,7 @@ const Mainpage = () => {
                         <div className="footer w-full h-8  flex justify-between items-center pt-3 px-2.5">
                             <div className="date text-xs font-semibold">{elem.date}</div>
                             <>
-                                <div className="edit cursor-pointer pl-6" onClick={handleEdit}>
+                                <div className="edit cursor-pointer pl-3" onClick={handleEdit}>
                                     <span className="edit-btn rounded-full flex justify-center w-8 h-8 bg-gray-100 hover:bg-gray-300">
                                         <img className="edit-img" width="16px" height="15px" src={editImg} alt="edit-icon" />
                                     </span>
