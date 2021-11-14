@@ -1,6 +1,6 @@
 // import "./img/plusgray.svg";
 const handleNewNoteCreate = function () {
-    let newColor;
+    // let newColor;
     let newContent;
     let newDate;
     let saveCreatebtn;
@@ -43,8 +43,8 @@ const handleNewNoteCreate = function () {
         allNotesObject = JSON.parse(myNotesUnparsed)
         // console.log(JSON.stringify(allNotesObject));
 
-        const colorsBar = document.querySelector(".colors");
-        const addColorBtn = document.querySelector(".add-btn");
+        // const colorsBar = document.querySelector(".colors");
+        // const addColorBtn = document.querySelector(".add-btn");
         const eachColor = document.querySelectorAll(".each-color");
         const allNotesSection = document.querySelector(".all-notes");
 
@@ -86,7 +86,7 @@ const handleNewNoteCreate = function () {
             function saveNote(e) {
                 e.stopPropagation();
                 newContent = saveCreatebtn.parentElement.previousSibling.value;
-                newColor = color;
+                // newColor = color;
 
                 const myDate = new Date();
                 const allMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
